@@ -1,4 +1,4 @@
-# Unreleased
+# 1.4.562 (2023-12-05 / 1297049)
 
 - add garden.def cljs namespace
 - Support alpha channel in `as-hex`
