@@ -4,9 +4,18 @@
 [![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/garden)](https://cljdoc.org/d/com.lambdaisland/garden) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/garden.svg)](https://clojars.org/com.lambdaisland/garden)
 <!-- /badges -->
 
-Release of noprompt/garden from git main branch to clojars
+This repo (`lambdaisland/garden`) is a fork of the original `noprompt/garden`
+repo, since the upstream repo had not had a Clojars release for some years, and
+a number of fixes and improvements had accumulated. The version found here is
+released to Clojars under the `com.lambdaisland` organization. See below for
+installation instructions.
 
-See also [lambdaisland/ornament](https://github.com/lambdaisland/ornament) for our companion library.
+At the time of writing both repos are identical in functionality, but this this
+repo uses the lambdaisland project tooling for handling releases. See
+`CHANGELOG.md` for release details.
+
+Also check out [lambdaisland/ornament](https://github.com/lambdaisland/ornament)
+for our styled component companion library.
 
 <!-- installation -->
 ## Installation
@@ -23,6 +32,8 @@ or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 [com.lambdaisland/garden "1.4.562"]
 ```
 <!-- /installation -->
+
+# Original README
 
 Garden is a library for rendering CSS in Clojure and ClojureScript.
 Conceptually similar to [Hiccup](https://github.com/weavejester/hiccup), it uses
