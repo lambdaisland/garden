@@ -18,7 +18,9 @@
 - Fixing removal of units by YUI for X.0 float values
 - Fix documentation string of color-div
 
-# 1.3.9 (2019-04-10 / 768ce1836)
+# Releases under noprompt/garden
+
+## 1.3.9 (2019-04-10 / 768ce1836)
 
 - Fix "0%" being replaced with "0" when pretty-printing is disabled
 - Fix issue where certain media queries produce invalid css when compression is enabled (cljs)

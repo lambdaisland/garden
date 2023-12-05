@@ -1,5 +1,29 @@
 # Garden
 
+<!-- badges -->
+[![CircleCI](https://circleci.com/gh/com.lambdaisland/garden.svg?style=svg)](https://circleci.com/gh/com.lambdaisland/garden) [![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/garden)](https://cljdoc.org/d/com.lambdaisland/garden) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/garden.svg)](https://clojars.org/com.lambdaisland/garden)
+<!-- /badges -->
+
+Release of noprompt/garden from git main branch to clojars
+
+See also [lambdaisland/ornament](https://github.com/lambdaisland/ornament) for our companion library.
+
+<!-- installation -->
+## Installation
+
+To use the latest release, add the following to your `deps.edn` ([Clojure CLI](https://clojure.org/guides/deps_and_cli))
+
+```
+com.lambdaisland/garden {:mvn/version "1.4.562"}
+```
+
+or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
+
+```
+[com.lambdaisland/garden "1.4.562"]
+```
+<!-- /installation -->
+
 Garden is a library for rendering CSS in Clojure and ClojureScript.
 Conceptually similar to [Hiccup](https://github.com/weavejester/hiccup), it uses
 vectors to represent rules and maps to represent declarations. It is designed
@@ -14,12 +38,7 @@ preprocessor for a programming language.
 * [Community](#community)
 * [Help!](#help)
 
-
 ## Getting Started
-
-Add the following dependency to your `project.clj` file:
-
-[![Clojars Project](http://clojars.org/garden/latest-version.svg)](http://clojars.org/garden)
 
 Garden 1.2.5 and below requires Clojure 1.6.0 and is known to work with
 ClojureScript 0.0-2342. However, starting with Garden 1.3.0 Garden requires
