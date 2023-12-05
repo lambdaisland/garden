@@ -1,3 +1,22 @@
+# Unreleased
+
+- add garden.def cljs namespace
+- Support alpha channel in `as-hex`
+- Add `marker` pseudo class in garden.selectors
+- Add `abs` to refer-clojure exclude in garden.color
+- Add `fr` unit
+- Fix @keyframes incorrectly adding context
+- Fixing unmatched delimiters failing the compilation.
+- Fixing removal of units by YUI for X.0 float values
+- Fix documentation string of color-div
+
+# 1.3.9 (2019-04-10 / 768ce1836)
+
+- Fix "0%" being replaced with "0" when pretty-printing is disabled
+- Fix issue where certain media queries produce invalid css when compression is enabled (cljs)
+- Fix typo in assert in `nth-x`
+- Fix issue #120 by working around YUI Compressor
+
 ## Changes in 1.3.6
 
 Add `@supports` rule support.
