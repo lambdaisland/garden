@@ -1,7 +1,7 @@
 # Garden
 
 <!-- badges -->
-[![CircleCI](https://circleci.com/gh/com.lambdaisland/garden.svg?style=svg)](https://circleci.com/gh/com.lambdaisland/garden) [![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/garden)](https://cljdoc.org/d/com.lambdaisland/garden) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/garden.svg)](https://clojars.org/com.lambdaisland/garden)
+[![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/garden)](https://cljdoc.org/d/com.lambdaisland/garden) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/garden.svg)](https://clojars.org/com.lambdaisland/garden)
 <!-- /badges -->
 
 Release of noprompt/garden from git main branch to clojars
