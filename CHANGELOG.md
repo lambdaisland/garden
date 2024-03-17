@@ -1,10 +1,8 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- Remove warning about `abs`
 
 # 1.4.562 (2023-12-05 / 1297049)
 

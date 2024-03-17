@@ -424,14 +424,15 @@
   "Given a color return a triple of the color and the two colors on
   either side of it's complement."
   ([color]
-     (split-complement color 130))
+   (split-complement color 130))
   ([color distance-from-complement]
-     (let [d (util/clip 1 179 distance-from-complement)]
-         (hue-rotations color 0 d (- d)))))
+   (let [d (util/clip 1 179 distance-from-complement)]
+     (hue-rotations color 0 d (- d)))))
 
-(defn- abs
-  [x]
-  (if (neg? x) (- x) x))
+(when-not (resolve 'clojure.core/abs)
+  (defn- abs
+    [x]
+    (if (neg? x) (- x) x)))
 
 (defn tetrad
   "Given a color return a quadruple of four colors which are
