@@ -5,4 +5,4 @@
  :aliases
  {:dev
   {:extra-paths ["test" "dev"]
-   :extra-deps {criterium/criterium {:mvn/version "0.4.3"}}}}}
+   :extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}}}
