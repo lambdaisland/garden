@@ -107,7 +107,13 @@
       (color/as-hex rgba-red) hexa-red
       (color/as-hex rgba-green) hexa-green
       (color/as-hex rgba-blue) hexa-blue
-      (color/as-hex rgba-white) hexa-white)))
+      (color/as-hex rgba-white) hexa-white
+
+      (color/as-hex hsla-black) hexa-black
+      (color/as-hex hsla-red) hexa-red
+      (color/as-hex hsla-green) hexa-green
+      (color/as-hex hsla-blue) hexa-blue
+      (color/as-hex hsla-white) hexa-white)))
 
 (deftest color-math-test
   (testing "color+"
