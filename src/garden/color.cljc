@@ -19,27 +19,31 @@
 ;; Converts a color to a hexadecimal string (implementation below).
 (declare as-hex)
 
-(defrecord CSSColor [red green blue hue saturation lightness alpha]
-  IFn
-  #?(:clj
-      (invoke [this] this))
-  #?(:clj
-      (invoke [this k]
-              (get this k)))
-  #?(:clj
-      (invoke [this k missing]
-              (get this k missing)))
-  #?(:cljs
-      (-invoke [this] this))
-  #?(:cljs
-      (-invoke [this k]
-               (get this k)))
-  #?(:cljs
-      (-invoke [this k missing]
-               (get this k missing)))
-  #?(:clj
-      (applyTo [this args]
-               (clojure.lang.AFn/applyToHelper this args))))
+#?(:bb
+   (defrecord CSSColor [red green blue hue saturation lightness alpha])
+
+   :default
+   (defrecord CSSColor [red green blue hue saturation lightness alpha]
+     IFn
+     #?(:clj
+        (invoke [this] this))
+     #?(:clj
+        (invoke [this k]
+                (get this k)))
+     #?(:clj
+        (invoke [this k missing]
+                (get this k missing)))
+     #?(:cljs
+        (-invoke [this] this))
+     #?(:cljs
+        (-invoke [this k]
+                 (get this k)))
+     #?(:cljs
+        (-invoke [this k missing]
+                 (get this k missing)))
+     #?(:clj
+        (applyTo [this args]
+                 (clojure.lang.AFn/applyToHelper this args)))))
 
 (def as-color map->CSSColor)
 

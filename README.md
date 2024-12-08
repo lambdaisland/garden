@@ -10,9 +10,12 @@ a number of fixes and improvements had accumulated. The version found here is
 released to Clojars under the `com.lambdaisland` organization. See below for
 installation instructions.
 
-At the time of writing both repos are identical in functionality, but this this
-repo uses the lambdaisland project tooling for handling releases. See
-`CHANGELOG.md` for release details.
+At the time of writing both repos are identical in functionality, but this repo
+uses the lambdaisland project tooling for handling releases. See `CHANGELOG.md`
+for release details.
+
+This fork has also been made Babashka-compatible, with the caveat that a few
+things are not supported. See the relevant README section.
 
 Also check out [lambdaisland/ornament](https://github.com/lambdaisland/ornament)
 for our styled component companion library.
@@ -33,7 +36,26 @@ or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 ```
 <!-- /installation -->
 
-# Original README
+# Babashka Compatibility
+
+This fork uses `:bb` reader conditionals to provide alternatives for some of the
+expressions that aren't supported by Babashka. In particular:
+
+Babashka does not support extending `IFn`, so instances of `CSSSelector` and
+`CSSColor` can not be called as functions. This means things like `((s/selector
+:*) s/before)` don't work. Use `"*::before"` instead (i.e. just use a string),
+or call `s/css-selector` explicitly. You can still use some of the sugar in
+`garden.selector` that doesn't depend on `IFn`, e.g. `(s/attr= :type "button")`.
+
+CSS Compression in Garden is delegated to
+`com.yahoo.platform.yui.compressor.CssCompressor`. Since that class is not
+compiled into bb, there's no way to leverage it. This means you have to keep
+`:pretty-print?` on (the default). Someone could create a pod for YUI compressor
+if they really wanted, but we don't recommend using it anyway. YUI compressor is
+an unmaintained tool that has not kept up with modern CSS developments, and
+we've seen it make a mess and cause breaking changes in your CSS.
+
+# Original Garden README (pre lambdaisland fork)
 
 Garden is a library for rendering CSS in Clojure and ClojureScript.
 Conceptually similar to [Hiccup](https://github.com/weavejester/hiccup), it uses

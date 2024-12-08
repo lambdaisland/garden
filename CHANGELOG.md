@@ -2,9 +2,7 @@
 
 ## Added
 
-## Fixed
-
-## Changed
+- Add `bb` compatibility (with caveats, see README)
 
 # 1.5.569 (2024-03-17 / 110b75e)
 

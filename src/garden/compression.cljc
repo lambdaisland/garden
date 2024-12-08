@@ -1,8 +1,10 @@
 (ns garden.compression
   "Stylesheet compression utilities."
-  #?(:clj
-     (:import (java.io StringReader StringWriter)
-              (com.yahoo.platform.yui.compressor CssCompressor))))
+  #?@(:bb
+      ()
+      :default
+      ((:import (java.io StringReader StringWriter)
+                (com.yahoo.platform.yui.compressor CssCompressor)))))
 
 ;; ---------------------------------------------------------------------
 ;; Clojure
@@ -10,7 +12,13 @@
 ;; Clojure stylesheet compression leverages the YUI Compressor as it
 ;; provides a performant and excellent solution to CSS compression.
 
-#?(:clj
+#?(:bb
+   (defn compress-stylesheet
+     ([stylesheet]
+      (throw (ex-info "Not implemented on babashka" {})))
+     ([^String stylesheet line-break-position]
+      (throw (ex-info "Not implemented on babashka" {}))))
+   :clj
    (defn compress-stylesheet
      "Compress a stylesheet with the YUI CSSCompressor. Set
   line-break-position to -1 for no line breaks, 0 for a line break
