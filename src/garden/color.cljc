@@ -245,7 +245,7 @@
 (defn hsla->hex
   "Convert an HSLA color map to a hexadecimal string."
   [color]
-  (-> color hsla->rgba rgb->hex))
+  (-> color hsla->rgba rgba->hex))
 
 (defn hex->hsl
   "Convert a hexadecimal color to an HSL color."
