@@ -4,6 +4,11 @@
 
 - Add `bb` compatibility (with caveats, see README)
 
+## Fixed
+
+- Fix hsla alpha channel in as-hex
+- Create output folder if it does not exist
+
 # 1.5.569 (2024-03-17 / 110b75e)
 
 ## Changed
