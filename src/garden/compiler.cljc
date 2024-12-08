@@ -14,6 +14,8 @@
      (:require-macros
       [garden.compiler :refer [with-media-query-context with-selector-context]]))
   #?(:clj
+     [:require [clojure.java.io :as jio]])
+  #?(:clj
      (:import (garden.types CSSUnit CSSFunction CSSAtRule)
               (garden.color CSSColor))))
 
@@ -115,6 +117,7 @@
    (defn- save-stylesheet
      "Save a stylesheet to disk."
      [path stylesheet]
+     (jio/make-parents path)
      (spit path stylesheet)))
 
 ;; =====================================================================
