@@ -8,11 +8,17 @@ This repo (`lambdaisland/garden`) is a fork of the original `noprompt/garden`
 repo, since the upstream repo had not had a Clojars release for some years, and
 a number of fixes and improvements had accumulated. The version found here is
 released to Clojars under the `com.lambdaisland` organization. See below for
-installation instructions.
+installation instructions. Note that currently we still use the same namespace
+names as before (e.g. `garden.compiler`), without a `lambdaisland` prefix. This
+means you should take care to only have `com.lambdaisland/garden` on your
+classpath, or you may get unexpected results. We may introduce a namespace
+prefix in the future.
 
-At the time of writing both repos are identical in functionality, but this repo
-uses the lambdaisland project tooling for handling releases. See `CHANGELOG.md`
-for release details.
+Originally we just took the upstream code as-is, since PRs had still been
+merged, just not released. The main initial change was moving to the same
+unified release tooling all lambdaisland libraries use. Since then we've merged
+and released a number of PRs that haven't yet been merged upstream. See
+`CHANGELOG.md` for release details.
 
 This fork has also been made Babashka-compatible, with the caveat that a few
 things are not supported. See the relevant README section.
