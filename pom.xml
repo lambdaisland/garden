@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.lambdaisland</groupId>
   <artifactId>garden</artifactId>
-  <version>1.5.569</version>
+  <version>1.6.585</version>
   <name>garden</name>
   <description>Release of noprompt/garden master to clojars</description>
   <url>https://github.com/lambdaisland/garden</url>
@@ -25,7 +25,7 @@
     <url>https://github.com/lambdaisland/garden</url>
     <connection>scm:git:git://github.com/lambdaisland/garden.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/lambdaisland/garden.git</developerConnection>
-    <tag>0b5b4a69ff69b79d493112202a0ebf154b1138eb</tag>
+    <tag>cff51a170c263b2019ad606d8694b8bd486e97c9</tag>
   </scm>
   <dependencies>
     <dependency>
@@ -58,7 +58,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <git-revision>0b5b4a69ff69b79d493112202a0ebf154b1138eb</git-revision>
+              <git-revision>cff51a170c263b2019ad606d8694b8bd486e97c9</git-revision>
             </manifestEntries>
           </archive>
         </configuration>
