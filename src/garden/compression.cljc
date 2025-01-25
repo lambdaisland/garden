@@ -2,7 +2,7 @@
   "Stylesheet compression utilities."
   #?@(:bb
       ()
-      :default
+      :clj
       ((:import (java.io StringReader StringWriter)
                 (com.yahoo.platform.yui.compressor CssCompressor)))))
 
