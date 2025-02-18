@@ -1,10 +1,8 @@
 # Unreleased
 
-## Added
-
 ## Fixed
 
-## Changed
+- Fix a clojurescript issue
 
 # 1.6.585 (2024-12-08 / 946065b)
 
