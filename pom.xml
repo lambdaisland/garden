@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.clojars.sandudorogan</groupId>
   <artifactId>garden</artifactId>
-  <version>1.7.592</version>
+  <version>1.7.593</version>
   <name>garden</name>
   <description>Release of noprompt/garden master to clojars</description>
   <url>https://github.com/sandudorogan/garden</url>
