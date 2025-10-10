@@ -121,7 +121,8 @@
       (util/at-supports? x)
       (util/at-keyframes? x)
       (util/at-page? x)
-      (util/at-container? x)))
+      (util/at-container? x)
+      (util/at-starting-style? x)))
 
 
 (defn- divide-vec
@@ -347,6 +348,15 @@
                               :rules rules
                               :container-name (:container-name value)})
       subqueries)))
+
+
+;; @starting-style expansion
+
+(defmethod expand-at-rule :starting-style
+  [{:keys [value]}]
+  (let [{:keys [rules]} value
+        xs (doall (mapcat expand (expand rules)))]
+    (list (CSSAtRule. :starting-style {:rules xs}))))
 
 
 ;; ---------------------------------------------------------------------
@@ -797,6 +807,20 @@
       (str "@container "
            (when container-name (str (util/to-str container-name) " "))
            (render-container-expr container-queries)
+           l-brace-1
+           (-> (map render-css rules)
+               (rule-join)
+               (indent-str))
+           r-brace-1))))
+
+
+;; @starting-style
+
+(defmethod render-at-rule :starting-style
+  [{:keys [value]}]
+  (let [{:keys [rules]} value]
+    (when (seq rules)
+      (str "@starting-style"
            l-brace-1
            (-> (map render-css rules)
                (rule-join)
