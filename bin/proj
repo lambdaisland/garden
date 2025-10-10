@@ -6,7 +6,7 @@
  {:license                   :mpl
   :inception-year            2021
   :description               "Release of noprompt/garden master to clojars"
-  :group-id                  "com.lambdaisland"})
+  :group-id                  "org.clojars.sandudorogan"})
 
 
 ;; Local Variables:

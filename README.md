@@ -1,16 +1,16 @@
 # Garden
 
 <!-- badges -->
-[![cljdoc badge](https://cljdoc.org/badge/com.lambdaisland/garden)](https://cljdoc.org/d/com.lambdaisland/garden) [![Clojars Project](https://img.shields.io/clojars/v/com.lambdaisland/garden.svg)](https://clojars.org/com.lambdaisland/garden)
+[![cljdoc badge](https://cljdoc.org/badge/org.clojars.sandudorogan/garden)](https://cljdoc.org/d/org.clojars.sandudorogan/garden) [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.sandudorogan/garden.svg)](https://clojars.org/org.clojars.sandudorogan/garden)
 <!-- /badges -->
 
 This repo (`lambdaisland/garden`) is a fork of the original `noprompt/garden`
 repo, since the upstream repo had not had a Clojars release for some years, and
 a number of fixes and improvements had accumulated. The version found here is
-released to Clojars under the `com.lambdaisland` organization. See below for
+released to Clojars under the `org.clojars.sandudorogan` organization. See below for
 installation instructions. Note that currently we still use the same namespace
-names as before (e.g. `garden.compiler`), without a `lambdaisland` prefix. This
-means you should take care to only have `com.lambdaisland/garden` on your
+names as before (e.g. `garden.compiler`), without a `sandudorogan` prefix. This
+means you should take care to only have `org.clojars.sandudorogan/garden` on your
 classpath, or you may get unexpected results. We may introduce a namespace
 prefix in the future.
 
@@ -32,13 +32,13 @@ for our styled component companion library.
 To use the latest release, add the following to your `deps.edn` ([Clojure CLI](https://clojure.org/guides/deps_and_cli))
 
 ```
-com.lambdaisland/garden {:mvn/version "1.7.590"}
+org.clojars.sandudorogan/garden {:mvn/version "1.7.591"}
 ```
 
 or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 
 ```
-[com.lambdaisland/garden "1.7.590"]
+[org.clojars.sandudorogan/garden "1.7.591"]
 ```
 <!-- /installation -->
 
