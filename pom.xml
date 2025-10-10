@@ -6,11 +6,11 @@
   <version>1.7.592</version>
   <name>garden</name>
   <description>Release of noprompt/garden master to clojars</description>
-  <url>https://github.com/lambdaisland/garden</url>
+  <url>https://github.com/sandudorogan/garden</url>
   <inceptionYear>2021</inceptionYear>
   <organization>
-    <name>Lambda Island</name>
-    <url>https://lambdaisland.com</url>
+    <name>Sandu Dorogan</name>
+    <url>https://www.linkedin.com/in/sandu-dorogan/</url>
   </organization>
   <properties>
     <project class="build sourceEncoding">UTF-8</project>
@@ -22,9 +22,9 @@
     </license>
   </licenses>
   <scm>
-    <url>https://github.com/lambdaisland/garden</url>
-    <connection>scm:git:git://github.com/lambdaisland/garden.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/lambdaisland/garden.git</developerConnection>
+    <url>https://github.com/sandudorogan/garden</url>
+    <connection>scm:git:git://github.com/sandudorogan/garden.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/sandudorogan/garden.git</developerConnection>
     <tag>2bdc5b1898e1b46a2ffc1f2ca393a79f2fb6aa1c</tag>
   </scm>
   <dependencies>
