@@ -229,6 +229,7 @@ in Garden directly you can just define it yourself by simply:
 ```
 
 Which will render like this:
+
 ```
 (css (url "http://fonts.googleapis.com/css?family=Lato"))
 ;; => url(http://fonts.googleapis.com/css?family=Lato)
@@ -285,7 +286,6 @@ Run both Clojure _and_ ClojureScript tests
 lein test-cljc
 ```
 
-
 ## Further Reading & Wiki
 
 Detailed documentation and a developer guide for Syntax, Rules, Declarations,
@@ -294,15 +294,15 @@ and Plugins is under the community-contributed
 
 Please contribute!
 
-## Help!
+## Help
 
 This project is looking for team members who can help this project succeed!
-Specifically of interest are people who can 
+Specifically of interest are people who can
 
 * help fix bugs,
 * answer questions,
 * merge pull requests, and
-*  deploy new versions.
+* deploy new versions.
 
 If you are interested in becoming a team member please open an issue and direct
 message @noprompt, or direct message @noprompt on
@@ -311,7 +311,6 @@ message @noprompt, or direct message @noprompt on
 The original author, @noprompt, is a busy person with a family, a job, and
 other projects. Be aware that it may take some time for pull requests to be
 evaluated.
-
 
 ## Community
 
