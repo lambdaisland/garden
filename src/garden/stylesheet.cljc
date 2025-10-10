@@ -79,7 +79,26 @@
                   :page-properties page-properties
                   :rules rules}))
 
-;;;; ## Functions
+
+(defn at-container
+  "Create a CSS @container rule. Supports both unnamed and named containers.
+  
+  Examples:
+    (at-container {:min-width \"700px\"} [:h1 {:font-size \"2em\"}])
+    (at-container :sidebar {:min-width \"700px\"} [:h1 {:font-size \"2em\"}])"
+  [first-arg second-arg & rules]
+  (if (map? first-arg)
+    ;; First arg is container-queries (unnamed container)
+    (at-rule :container {:container-name nil
+                         :container-queries first-arg
+                         :rules (cons second-arg rules)})
+    ;; First arg is container-name (named container)
+    (at-rule :container {:container-name first-arg
+                         :container-queries second-arg
+                         :rules rules})))
+
+
+;; ## Functions
 
 (defn rgb
   "Create a color from RGB values."

@@ -126,6 +126,13 @@
   [x]
   (and (at-rule? x) (= (:identifier x) :import)))
 
+
+(defn at-container?
+  "True if `x` is a CSS `@container` rule."
+  [x]
+  (and (at-rule? x) (= (:identifier x) :container)))
+
+
 (defn prefix
   "Attach a CSS style prefix to s."
   [p s]

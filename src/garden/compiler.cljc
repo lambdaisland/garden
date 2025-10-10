@@ -105,7 +105,9 @@
       (util/at-media? x)
       (util/at-supports? x)
       (util/at-keyframes? x)
-      (util/at-page? x)))
+      (util/at-page? x)
+      (util/at-container? x)))
+
 
 (defn- divide-vec
   "Return a vector of [(filter pred coll) (remove pred coll)]."
@@ -293,6 +295,25 @@
          (CSSAtRule. :page)
          (list))))
 
+
+;; @container expansion
+
+(defmethod expand-at-rule :container
+  [{:keys [value]}]
+  (let [{:keys [container-queries rules]} value
+        container-queries (expand-media-query-expression container-queries)
+        xs (with-media-query-context container-queries
+             (doall (mapcat expand (expand rules))))
+        ;; Though container-queries may be nested, they may not be nested
+        ;; at compile time. Here we make sure this is the case.
+        [subqueries rules] (divide-vec util/at-container? xs)]
+    (cons
+      (CSSAtRule. :container {:container-queries container-queries
+                              :rules rules
+                              :container-name (:container-name value)})
+      subqueries)))
+
+
 ;; ---------------------------------------------------------------------
 ;; Stylesheet expansion
 
@@ -311,7 +332,7 @@
   #?(:cljs (expand [this] (expand-seqs this)))
 
   #?(:cljs RSeq)
-  #?(:cljs(expand [this] (expand-seqs this)))
+  #?(:cljs (expand [this] (expand-seqs this)))
 
   #?(:cljs NodeSeq)
   #?(:cljs (expand [this] (expand-seqs this)))
@@ -320,8 +341,7 @@
   #?(:cljs (expand [this] (expand-seqs this)))
 
   #?(:cljs Cons)
-  #?(:cljs (
-            expand [this] (expand-seqs this)))
+  #?(:cljs (expand [this] (expand-seqs this)))
 
   #?(:cljs ChunkedCons)
   #?(:cljs (expand [this] (expand-seqs this)))
@@ -689,6 +709,29 @@
                     (rule-join)
                     (indent-str))))
          r-brace)))
+
+
+;; @container
+
+(defn- render-container-expr
+  "Render a container query expression. Uses the same logic as feature queries."
+  [expr]
+  (render-feature-expr expr))
+
+
+(defmethod render-at-rule :container
+  [{:keys [value]}]
+  (let [{:keys [container-name container-queries rules]} value]
+    (when (seq rules)
+      (str "@container "
+           (when container-name (str (util/to-str container-name) " "))
+           (render-container-expr container-queries)
+           l-brace-1
+           (-> (map render-css rules)
+               (rule-join)
+               (indent-str))
+           r-brace-1))))
+
 
 ;; ---------------------------------------------------------------------
 ;; CSSRenderer implementation

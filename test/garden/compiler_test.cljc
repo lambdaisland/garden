@@ -211,6 +211,46 @@
                                     {:size "A3"}
                                     ["@bottom-right-corner" {:content "'Page ' counter(page)"}]))))))
 
+
+(deftest at-container-test
+  (let [flags {:pretty-print? false}]
+    (are [x y] (= (compile-css flags x) y)
+      (at-container {:min-width (CSSUnit. :em 1)}
+                    [:h1 {:a :b}])
+      "@container(min-width:1em){h1{a:b}}"
+
+      (list (at-container {:min-width (CSSUnit. :em 1)}
+                          [:h1 {:a :b}])
+            [:h2 {:c :d}])
+      "@container(min-width:1em){h1{a:b}}h2{c:d}"
+
+      (list [:a {:a "b"}
+             (at-container {:min-width "1em"}
+                           [:&:hover {:c "d"}])])
+      "a{a:b}@container(min-width:1em){a:hover{c:d}}"
+
+      (at-container {:-webkit-min-device-pixel-ratio "2"}
+                    [:h1 {:a "b"}])
+      "@container(-webkit-min-device-pixel-ratio:2){h1{a:b}}"
+
+      (at-container {:min-width (CSSUnit. :em 40)}
+                    [:h1 {:a "b"}])
+      "@container(min-width:40em){h1{a:b}}")
+
+    (let [compiled (compile-css
+                     {:pretty-print? false}
+                     (at-container :sidebar {:min-width (CSSUnit. :em 1)}
+                                   [:h1 {:a :b}]))]
+      (is (re-find #"@container sidebar ?\(min-width:1em\)\{h1\{a:b\}\}" compiled)))
+
+    (let [re #"@container\(min-width:40em\) and \(orientation:landscape\)\{h1\{a:b\}\}"
+          compiled (compile-css
+                     {:pretty-print? false}
+                     (at-container {:min-width (CSSUnit. :em 40) :orientation :landscape}
+                                   [:h1 {:a "b"}]))]
+      (is (re-find re compiled)))))
+
+
 (deftest flag-tests
   (testing ":vendors"
     (let [compiled (compile-css
