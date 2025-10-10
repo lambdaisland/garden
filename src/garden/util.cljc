@@ -156,6 +156,12 @@
   (and (at-rule? x) (= (:identifier x) :container)))
 
 
+(defn at-starting-style?
+  "True if `x` is a CSS `@starting-style` rule."
+  [x]
+  (and (at-rule? x) (= (:identifier x) :starting-style)))
+
+
 (defn prefix
   "Attach a CSS style prefix to s."
   [p s]

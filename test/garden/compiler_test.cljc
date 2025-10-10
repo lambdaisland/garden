@@ -4,7 +4,7 @@
        :clj [clojure.test :as t :refer [is are deftest testing]])
     [garden.color :as color]
     [garden.compiler :refer [compile-css expand render-css]]
-    [garden.stylesheet :refer (at-import at-media at-keyframes at-supports at-page at-container)]
+    [garden.stylesheet :refer (at-import at-media at-keyframes at-supports at-page at-container at-starting-style)]
     #?(:clj [garden.types :as types]
        :cljs [garden.types :as types :refer [CSSFunction CSSUnit]]))
   #?(:clj
@@ -262,6 +262,26 @@
                      (at-container {:min-width (CSSUnit. :em 40) :orientation :landscape}
                                    [:h1 {:a "b"}]))]
       (is (re-find re compiled)))))
+
+
+(deftest at-starting-style-test
+  (let [flags {:pretty-print? false}]
+    (are [x y] (= (compile-css flags x) y)
+      (at-starting-style [:h1 {:a :b}])
+      "@starting-style{h1{a:b}}"
+
+      (list (at-starting-style [:h1 {:a :b}])
+            [:h2 {:c :d}])
+      "@starting-style{h1{a:b}}h2{c:d}"
+
+      (list [:a {:a "b"}
+             (at-starting-style [:&:hover {:c "d"}])])
+      "a{a:b}@starting-style{a:hover{c:d}}")
+
+    (is (= "@media screen{@starting-style{a{f:bar}}}"
+           (compile-css {:pretty-print? false}
+                        (at-media {:screen true}
+                                  (at-starting-style [:a {:f "bar"}])))))))
 
 
 (deftest flag-tests

@@ -112,6 +112,12 @@
                          :rules rules})))
 
 
+(defn at-starting-style
+  "Create a CSS @starting-style rule."
+  [& rules]
+  (at-rule :starting-style {:rules rules}))
+
+
 ;; ## Functions
 
 (defn rgb
