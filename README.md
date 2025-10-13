@@ -32,13 +32,13 @@ for our styled component companion library.
 To use the latest release, add the following to your `deps.edn` ([Clojure CLI](https://clojure.org/guides/deps_and_cli))
 
 ```
-org.clojars.sandudorogan/garden {:mvn/version "1.8.606"}
+org.clojars.sandudorogan/garden {:mvn/version "1.9.608"}
 ```
 
 or add the following to your `project.clj` ([Leiningen](https://leiningen.org/))
 
 ```
-[org.clojars.sandudorogan/garden "1.8.606"]
+[org.clojars.sandudorogan/garden "1.9.608"]
 ```
 <!-- /installation -->
 
