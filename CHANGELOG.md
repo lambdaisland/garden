@@ -1,4 +1,4 @@
-# Unreleased
+# 1.8.606 (2025-10-13 / 0a59dde)
 
 ## Added
 
