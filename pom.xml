@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.clojars.sandudorogan</groupId>
   <artifactId>garden</artifactId>
-  <version>1.7.593</version>
+  <version>1.8.606</version>
   <name>garden</name>
   <description>Release of noprompt/garden master to clojars</description>
   <url>https://github.com/sandudorogan/garden</url>
   <inceptionYear>2021</inceptionYear>
   <organization>
-    <name>Sandu Dorogan</name>
-    <url>https://www.linkedin.com/in/sandu-dorogan/</url>
+    <name>Lambda Island</name>
+    <url>https://lambdaisland.com</url>
   </organization>
   <properties>
     <project class="build sourceEncoding">UTF-8</project>
@@ -25,7 +25,7 @@
     <url>https://github.com/sandudorogan/garden</url>
     <connection>scm:git:git://github.com/sandudorogan/garden.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/sandudorogan/garden.git</developerConnection>
-    <tag>2bdc5b1898e1b46a2ffc1f2ca393a79f2fb6aa1c</tag>
+    <tag>059dcd6e11e998d14a9f71a9bd6c103c1f983dd4</tag>
   </scm>
   <dependencies>
     <dependency>
@@ -58,7 +58,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <git-revision>2bdc5b1898e1b46a2ffc1f2ca393a79f2fb6aa1c</git-revision>
+              <git-revision>059dcd6e11e998d14a9f71a9bd6c103c1f983dd4</git-revision>
             </manifestEntries>
           </archive>
         </configuration>

@@ -1,7 +1,7 @@
 # Garden
 
 <!-- badges -->
-[![cljdoc badge](https://cljdoc.org/badge/org.clojars.sandudorogan/garden)](https://cljdoc.org/d/org.clojars.sandudorogan/garden) [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.sandudorogan/garden.svg)](https://clojars.org/org.clojars.sandudorogan/garden)
+[![CircleCI](https://circleci.com/gh/org.clojars.sandudorogan/garden.svg?style=svg)](https://circleci.com/gh/org.clojars.sandudorogan/garden) [![cljdoc badge](https://cljdoc.org/badge/org.clojars.sandudorogan/garden)](https://cljdoc.org/d/org.clojars.sandudorogan/garden) [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.sandudorogan/garden.svg)](https://clojars.org/org.clojars.sandudorogan/garden)
 <!-- /badges -->
 
 This repo (`lambdaisland/garden`) is a fork of the original `noprompt/garden`
