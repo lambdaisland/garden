@@ -17,3 +17,4 @@ out/*
 .cpcache
 .cache
 .calva
+.vscode
