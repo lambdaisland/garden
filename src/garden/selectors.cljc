@@ -1059,5 +1059,5 @@
         sv (string/replace (str a b c) #"^0*" "")]
     (if (empty? sv)
       0
-      #?(:clj (Integer. sv)
+      #?(:clj (Integer/parseInt sv)
          :cljs (js/parseInt sv)))))
