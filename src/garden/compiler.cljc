@@ -30,8 +30,7 @@
   {;; When set to `true` the compiled stylesheet will be "pretty
    ;; printed." This would be equivalent to setting
    ;; `{:ouput-style => :expanded}` in Sass. When set to `false`
-   ;; the compiled stylesheet will be compressed with the YUI
-   ;; compressor.
+   ;; the compiled stylesheet will be compressed with the CssCompressor.
    :pretty-print? true
    ;; A sequence of files to prepend to the output file.
    :preamble []

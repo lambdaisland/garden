@@ -4,13 +4,13 @@
       ()
       :clj
       ((:import (java.io StringReader StringWriter)
-                (com.yahoo.platform.yui.compressor CssCompressor)))))
+                (org.primefaces.extensions.optimizerplugin.optimizer CssCompressor)))))
 
 ;; ---------------------------------------------------------------------
 ;; Clojure
 
-;; Clojure stylesheet compression leverages the YUI Compressor as it
-;; provides a performant and excellent solution to CSS compression.
+;; Clojure stylesheet compression leverages the Resources Optimizer Maven Plugin
+;; as it provides a performant and excellent solution to CSS compression.
 
 #?(:bb
    (defn compress-stylesheet
@@ -20,23 +20,18 @@
       (throw (ex-info "Not implemented on babashka" {}))))
    :clj
    (defn compress-stylesheet
-     "Compress a stylesheet with the YUI CSSCompressor. Set
+     "Compress a stylesheet with the CSSCompressor. Set
   line-break-position to -1 for no line breaks, 0 for a line break
   after each rule, and n > 0 for a line break after at most n
   columns. Defaults to no -1"
      ([stylesheet]
       (compress-stylesheet stylesheet -1))
      ([^String stylesheet line-break-position]
-      ;; XXX: com.yahoo.platform.yui.compressor.CssCompressor#compress replaces "0%" with "0" everywhere
-      ;;      which might have worked in 2013 when YUI Compressor 2.4.8 was released, but not anymore in 2019.
-      (with-open [reader (-> stylesheet
-                             (.replaceAll "(^|[^0-9])0%" "$10__YUIHACK__%")
-                             (StringReader.))
+      (with-open [reader (StringReader. stylesheet)
                   writer (StringWriter.)]
         (doto (CssCompressor. reader)
           (.compress writer line-break-position))
-        (-> (str writer)
-            (.replaceAll "0__YUIHACK__%" "0%"))))))
+        (str writer)))))
 
 ;; ---------------------------------------------------------------------
 ;; ClojureScript

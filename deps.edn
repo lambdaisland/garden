@@ -1,6 +1,8 @@
 {:paths ["src"],
  :deps
- {com.yahoo.platform.yui/yuicompressor {:mvn/version "2.4.8"}}
+ {org.primefaces.extensions/resources-optimizer-maven-plugin
+  {:mvn/version "2.7.5"
+   :exclusions  [com.google.javascript/closure-compiler com.google.guava/guava]}}
 
  :aliases
  {:dev

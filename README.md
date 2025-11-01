@@ -54,10 +54,10 @@ or call `s/css-selector` explicitly. You can still use some of the sugar in
 `garden.selector` that doesn't depend on `IFn`, e.g. `(s/attr= :type "button")`.
 
 CSS Compression in Garden is delegated to
-`com.yahoo.platform.yui.compressor.CssCompressor`. Since that class is not
+`org.primefaces.extensions.optimizerplugin.optimizer.CssCompressor`. Since that class is not
 compiled into bb, there's no way to leverage it. This means you have to keep
-`:pretty-print?` on (the default). Someone could create a pod for YUI compressor
-if they really wanted, but we don't recommend using it anyway. YUI compressor is
+`:pretty-print?` on (the default). Someone could create a pod for the compressor
+if they really wanted, but we don't recommend using it anyway. The original YUI compressor is
 an unmaintained tool that has not kept up with modern CSS developments, and
 we've seen it make a mess and cause breaking changes in your CSS.
 
