@@ -2,9 +2,14 @@
  :deps
  {org.primefaces.extensions/resources-optimizer-maven-plugin
   {:mvn/version "2.7.5"
-   :exclusions  [com.google.javascript/closure-compiler com.google.guava/guava]}}
+   :exclusions  [com.google.javascript/closure-compiler com.google.guava/guava]}
+  }
 
  :aliases
  {:dev
   {:extra-paths ["test" "dev"]
-   :extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}}}
+   :extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}}}}

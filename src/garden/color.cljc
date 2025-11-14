@@ -433,10 +433,11 @@
    (let [d (util/clip 1 179 distance-from-complement)]
      (hue-rotations color 0 d (- d)))))
 
-(when-not (resolve 'clojure.core/abs)
-  (defn- abs
-    [x]
-    (if (neg? x) (- x) x)))
+(def ^:private abs
+  (or (some-> (resolve 'clojure.core/abs) deref)
+      (fn
+        [x]
+        (if (neg? x) (- x) x))))
 
 (defn tetrad
   "Given a color return a quadruple of four colors which are
@@ -444,14 +445,14 @@
   optional angle may be given for color of the second complement in the
   pair (this defaults to 90 when only color is passed)."
   ([color]
-     (tetrad color 90))
+   (tetrad color 90))
   ([color angle]
-     (let [a (util/clip 1 90 (abs (:magnitude angle angle)))
-           color-2 (rotate-hue color a)]
-       [(rotate-hue color 0)
-        (complement color)
-        color-2
-        (complement color-2)])))
+   (let [a (util/clip 1 90 (abs (:magnitude angle angle)))
+         color-2 (rotate-hue color a)]
+     [(rotate-hue color 0)
+      (complement color)
+      color-2
+      (complement color-2)])))
 
 (defn shades
   "Given a color return a list of shades from lightest to darkest by
