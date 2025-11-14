@@ -1,4 +1,4 @@
-# Unreleased
+# 1.8.601 (2025-11-14 / 95d22d0)
 
 - Replace YUI Compressor with resources-optimizer-maven-plugin
 - Upgrade deprecated integer parsing
