@@ -6,7 +6,7 @@
       :cljs [garden.types :as types :refer [CSSFunction CSSUnit]])
    [garden.color :as color]
    [garden.compiler :refer [compile-css expand render-css]]
-   [garden.stylesheet :refer (at-import at-media at-keyframes at-supports at-page)])
+   [garden.stylesheet :refer (at-container at-import at-media at-keyframes at-supports at-page)])
   #?(:clj
      (:import garden.types.CSSFunction
               garden.types.CSSUnit)))
