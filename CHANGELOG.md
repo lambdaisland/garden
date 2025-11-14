@@ -2,6 +2,8 @@
 
 - Replace YUI Compressor with resources-optimizer-maven-plugin
 - Upgrade deprecated integer parsing
+- Add kaocha for running tests
+- Fix dynamic resolution of `abs` in `garden.color`
 
 ## Added
 
