@@ -1,10 +1,8 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- Bump dependencies
 
 # 1.9.606 (2025-12-08 / 2fb0029)
 
